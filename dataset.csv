@@ -7,13 +7,13 @@ world_rank,university_name,country,teaching,international,research,income,studen
 6,Harvard University,United States of America,83.6,77.2,99,45.2,8.9
 7,Princeton University,United States of America,85.1,78.5,91.9,52.1,8.4
 8,Imperial College London,United Kingdom,83.3,96,88.5,53.7,11.7
-9,ETH Zurich ‰ÛÒ Swiss Federal Institute of Technology Zurich,Switzerland,77,97.9,95,80,14.7
+9,ETH Zurich äóñ Swiss Federal Institute of Technology Zurich,Switzerland,77,97.9,95,80,14.7
 10,University of Chicago,United States of America,85.7,65,88.9,36.6,6.9
 11,Johns Hopkins University,United States of America,77.6,70,90.4,100,3.6
 12,Yale University,United States of America,86.5,64.3,87.8,43.3,4.4
 13,"University of California, Berkeley",United States of America,80.4,61.9,91.1,47.9,16.4
 14,University College London,United Kingdom,78.1,94.4,91,40.5,10.7
-15,Columbia University,United States of America,85.9,73.5,82.2,-,5.9
+15,Columbia University,United States of America,85.9,73.5,82.2,40,5.9
 16,"University of California, Los Angeles",United States of America,80.8,56.4,88.6,47.9,10.3
 17,University of Pennsylvania,United States of America,82,49.5,86.9,47.9,6.5
 18,Cornell University,United States of America,77.9,63.9,86.1,33.7,10.2
@@ -21,15 +21,15 @@ world_rank,university_name,country,teaching,international,research,income,studen
 20,Duke University,United States of America,76,56.5,78,100,4.8
 21,University of Michigan,United States of America,76.8,53.7,85.2,56.3,9
 22,Carnegie Mellon University,United States of America,67.4,57.1,88.8,57.5,13.1
-23,London School of Economics and Political Science,United Kingdom,69.8,93.6,80.6,32.2,
+23,London School of Economics and Political Science,United Kingdom,69.8,93.6,80.6,32.2,10
 24,University of Edinburgh,United Kingdom,68.6,89.8,77.2,36.1,14.1
 25,Northwestern University,United States of America,69.8,53.9,78.4,81.2,13.8
 26,National University of Singapore,Singapore,71.7,96.2,84.5,49.8,15.5
-27,King‰Ûªs College London,United Kingdom,64.5,93.8,75.8,40.1,11.4
+27,Kingäó»s College London,United Kingdom,64.5,93.8,75.8,40.1,11.4
 28,Karolinska Institute,Sweden,60.6,73.1,81.1,75.8,11.5
 29,LMU Munich,Germany,70.5,62.8,77.4,100,15.5
 30,New York University,United States of America,74.7,49.3,72.3,30.4,6.8
-31,Ìäcole Polytechnique FÌ©dÌ©rale de Lausanne,Switzerland,61.3,98.6,67.5,65.4,10.5
+31,íŠcole Polytechnique Fí©dí©rale de Lausanne,Switzerland,61.3,98.6,67.5,65.4,10.5
 32,University of Washington,United States of America,67.1,51.2,70,43.1,11.8
 33,University of Melbourne,Australia,62,87.1,75.5,64.6,23.7
 34,University of British Columbia,Canada,60.2,90.5,73.2,42.6,17.6
@@ -52,7 +52,7 @@ world_rank,university_name,country,teaching,international,research,income,studen
 51,Brown University,United States of America,62.8,57.8,55.7,31.4,10.1
 52,Australian National University,Australia,54.7,93.3,77.3,48,19.2
 53,Technical University of Munich,Germany,61,63.8,66,99.2,31.5
-54,Ìäcole Normale SupÌ©rieure,France,70.6,85.5,47.7,37.1,7.9
+54,íŠcole Normale Supí©rieure,France,70.6,85.5,47.7,37.1,7.9
 55,Nanyang Technological University,Singapore,48.4,94.6,61.3,99.9,16.2
 56,University of Manchester,United Kingdom,58.4,87,66,42,15.3
 56,University of Sydney,Australia,54.3,84.4,68.1,72.4,20.2
@@ -76,7 +76,7 @@ world_rank,university_name,country,teaching,international,research,income,studen
 75,Pennsylvania State University,United States of America,50.4,40.8,61.9,56.2,12.4
 76,University of Glasgow,United Kingdom,41.6,85.8,48.3,31.6,16
 76,University of Helsinki,Finland,48.4,51.8,60.4,31.6,15.1
-78,University of TÌ_bingen,Germany,47,58.2,59.8,59.2,38.9
+78,University of Tí_bingen,Germany,47,58.2,59.8,59.2,38.9
 79,University of Pittsburgh,United States of America,50.6,33.9,50.3,39.3,5.8
 80,University of Warwick,United Kingdom,47.4,90.3,53.1,37.7,16.6
 81,Uppsala University,Sweden,44.1,59.6,61,39.5,18.2
@@ -92,15 +92,15 @@ world_rank,university_name,country,teaching,international,research,income,studen
 90,Lund University,Sweden,39.7,74.1,53.6,70.4,11.5
 90,Ohio State University,United States of America,51.6,53,46.6,53.1,13.4
 93,University of Exeter,United Kingdom,39.4,87.3,40,31.9,18.8
-94,University of Bonn,Germany,45.1,63.6,47.5,-,70.4
+94,University of Bonn,Germany,45.1,63.6,47.5,30,70.4
 94,Georgetown University,United States of America,54.4,52.7,39.3,80.7,8.5
 94,McMaster University,Canada,39.8,76.1,44.8,88,19.3
 97,University of Sheffield,United Kingdom,42.4,81.9,48.8,43.4,15.5
 98,Queen Mary University of London,United Kingdom,34.1,93.5,41.3,36.8,14
-99,University of GÌ¦ttingen,Germany,49.3,56.4,54.5,31.8,25.6
+99,University of Gí_ttingen,Germany,49.3,56.4,54.5,31.8,25.6
 99,Michigan State University,United States of America,47.3,56.4,52.6,32.2,15.7
 101,University of Basel,Switzerland,39.5,94.7,33.1,99.9,17.3
-101,Ìäcole Polytechnique,France,53.5,92.8,44.6,82.3,4.8
+101,íŠcole Polytechnique,France,53.5,92.8,44.6,82.3,4.8
 101,Rice University,United States of America,37.9,66.6,35.1,41.7,9
 104,Dartmouth College,United States of America,50.7,38.3,35.8,40.8,6.6
 104,University of Zurich,Switzerland,49.5,90.4,31.5,44,6.5
@@ -114,24 +114,24 @@ world_rank,university_name,country,teaching,international,research,income,studen
 112,Scuola Normale Superiore di Pisa,Italy,54.2,46.3,53.1,52,16.5
 113,University of Montreal,Canada,46.3,84.2,45.5,92.6,20.3
 113,Pierre and Marie Curie University,France,52.8,74.1,32.7,37.4,8.7
-113,Purdue University,United States of America,50.2,66.4,57.7,-,18.1
+113,Purdue University,United States of America,50.2,66.4,57.7,30,18.1
 116,Pohang University of Science and Technology,South Korea,49.1,33.7,47.1,100,10.1
 117,"University of Maryland, College Park",United States of America,45,43.5,42.1,32.3,8.4
 118,Ghent University,Belgium,42.1,54.2,54.5,88.3,34.1
 119,University of Birmingham,United Kingdom,39.4,82,41.8,34.7,16.4
 120,University of Bern,Switzerland,40,83.7,42.5,82.9,22.5
 120,University of Cape Town,South Africa,34.9,80.2,38.7,92.7,12.1
-120,University of Florida,United States of America,51.8,33.3,56.8,-,18.7
+120,University of Florida,United States of America,51.8,33.3,56.8,90,18.7
 123,University of Erlangen-Nuremberg,Germany,51.7,47,39.7,99.4,53.9
 123,"Rutgers, the State University of New Jersey",United States of America,43.9,34.7,55.7,35.9,17.3
-125,University of MÌ_nster,Germany,40.3,46.3,44.1,58.2,46.1
+125,University of Mí_nster,Germany,40.3,46.3,44.1,58.2,46.1
 125,Radboud University Nijmegen,Netherlands,34.3,60.9,48.5,39.2,13
 127,University of Colorado Boulder,United States of America,39.7,36.6,37.6,35.7,16.1
 127,Tufts University,United States of America,45.2,49.4,33.3,60.7,10
 129,"Royal Holloway, University of London",United Kingdom,35.1,92.7,33.2,34.4,15.9
 130,Lancaster University,United Kingdom,34,87,41.4,33.6,14.9
 131,University of Geneva,Switzerland,34.9,98.5,40.5,72.4,15
-131,University of York,United Kingdom,41.9,83.5,46.3,31.1,
+131,University of York,United Kingdom,41.9,83.5,46.3,31.1,10
 133,Case Western Reserve University,United States of America,46.1,40.5,33.2,34.1,6.4
 133,University of Leeds,United Kingdom,43.7,77.4,39,36.7,14.7
 135,University of Oslo,Norway,43.3,68.2,44.7,38.3,18.8
@@ -164,12 +164,12 @@ world_rank,university_name,country,teaching,international,research,income,studen
 163,University of Arizona,United States of America,38.7,38.6,41.8,32.4,12.7
 164,Pompeu Fabra University,Spain,32.9,63.3,28,37.2,18.3
 164,University of Reading,United Kingdom,39.3,85.1,37.3,34.2,14.8
-164,Yeshiva University,United States of America,44.8,28.5,23.7,-,5.5
+164,Yeshiva University,United States of America,44.8,28.5,23.7,30,5.5
 167,"University of California, Riverside",United States of America,27.5,59.5,33.3,42.5,22
 167,University of Leicester,United Kingdom,32.1,86.6,27.8,31.7,13.4
 167,National Taiwan University,Taiwan,54.1,27.7,58,49.6,11.9
 167,Technical University of Denmark,Denmark,37.3,85.1,29.9,50,5
-167,UniversitÌ© Catholique de Louvain,Belgium,38.7,74.2,40.6,51,42
+167,Universití© Catholique de Louvain,Belgium,38.7,74.2,40.6,51,42
 172,University of Aberdeen,United Kingdom,29.7,91.4,31.4,43.1,15.8
 172,University of Auckland,New Zealand,31.4,90.5,39.5,78,18.9
 174,University of Barcelona,Spain,38.5,49.2,37.4,31.1,12.2
@@ -179,13 +179,13 @@ world_rank,university_name,country,teaching,international,research,income,studen
 178,Hebrew University of Jerusalem,Israel,45.8,55.6,41.4,31.9,10.7
 179,University of Waterloo,Canada,35.4,74.4,43.9,39.5,24.2
 180,University of Gothenburg,Sweden,28.5,58.3,39.8,30.3,16.4
-180,Scuola Superiore Sant‰ÛªAnna,Italy,42.5,45.2,23.2,71.2,8.5
+180,Scuola Superiore Santäó»Anna,Italy,42.5,45.2,23.2,71.2,8.5
 182,University of Bergen,Norway,32.5,70,31.5,36.2,11.1
 182,Cardiff University,United Kingdom,30.9,78.1,31.6,34.6,13.1
 182,University of Utah,United States of America,35.6,30.1,35.3,57.4,16.9
 185,Brandeis University,United States of America,28.3,47,25.7,38.6,12.6
 185,University of Dundee,United Kingdom,25.6,78.5,26.9,49.5,15.3
-185,University of WÌ_rzburg,Germany,34.6,50.9,35.8,47.9,38.4
+185,University of Wí_rzburg,Germany,34.6,50.9,35.8,47.9,38.4
 188,Paris-Sud University,France,38.7,64.2,29,28.8,15
 189,Arizona State University,United States of America,32.4,31.9,38.1,32,29.9
 190,University of Antwerp,Belgium,31.6,64.8,40.8,60.3,30.3
@@ -193,9 +193,9 @@ world_rank,university_name,country,teaching,international,research,income,studen
 192,Ulm University,Germany,35.2,58.2,23.9,58.4,11.2
 193,University of Luxembourg,Luxembourg,25,99.8,26.7,38.1,15.9
 193,Texas A&M University,United States of America,49.4,47.8,52.4,46.4,21.4
-195,CharitÌ© - UniversitÌ_tsmedizin Berlin,Germany,37.3,61.1,22.2,68.4,6.6
+195,Charití© - Universití_tsmedizin Berlin,Germany,37.3,61.1,22.2,68.4,6.6
 196,Newcastle University,United Kingdom,30.9,84.3,27.5,34.7,15.2
-196,"St George‰Ûªs, University of London",United Kingdom,25.6,69.5,18.1,37.7,13.4
+196,"St Georgeäó»s, University of London",United Kingdom,25.6,69.5,18.1,37.7,13.4
 198,University of Trento,Italy,30.8,55.9,27.4,47.1,43.2
-199,Paris Diderot University ‰ÛÒ Paris 7,France,30.5,64.9,22.9,29,14.8
-200,Queen‰Ûªs University Belfast,United Kingdom,34.1,93.4,33.3,35.7,17.9
+199,Paris Diderot University äóñ Paris 7,France,30.5,64.9,22.9,29,14.8
+200,Queenäó»s University Belfast,United Kingdom,34.1,93.4,33.3,35.7,17.9

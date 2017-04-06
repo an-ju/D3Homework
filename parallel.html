@@ -49,7 +49,31 @@ svg {
 </style>
 <body>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script src="//labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<div class="col-md-1"></div>
+<div class="col-md-11">
+    <h1>Times University Ranking 2016 (Top 200)</h1>
+</div>
+<div class="col-md-10" id="chart"></div>
+<div class="col-md-2">
+    <h2>Customized Selection</h2>
+    <form>
+        <div class="form-group">
+            <label for="university">University</label>
+            <select class="form-control" id="univ-list">
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="region">Region</label>
+            <select class="form-control" id="region-list">
+            </select>
+        </div>
+    </form>
+</div>
+
 <script src="parallel.js"></script>
+
 </body>
