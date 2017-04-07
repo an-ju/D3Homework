@@ -2,7 +2,7 @@ var bbox = d3.select("#chart");
 
 var margin = {top: 30, right: 10, bottom: 10, left: 10},
     width = bbox.node().getBoundingClientRect().width - margin.left - margin.right,
-    height = 800 - margin.top - margin.bottom;
+    height = 600 - margin.top - margin.bottom;
 
 var x = d3.scale.ordinal().rangePoints([0, width], 1),
     y = {},
@@ -59,6 +59,19 @@ d3.csv("dataset.csv", function(error, univs) {
     .enter()
       .append("option")
       .text(function(d) { return d });
+
+  var label = d3.select('#univ-selection')
+      .selectAll('.checkbox')
+      .data(univs)
+    .enter()
+      .append('div')
+      .attr('class', 'checkbox')
+      .append('label');
+
+  label.append('input')
+      .attr('type', 'checkbox')
+      .attr('value', generate_tag);
+  label.append('text').text(generate_tag);
 
   d3.select("#univ-list").on("change", univ_selection);
   d3.select("#region-list").on("change", region_selection);
@@ -151,7 +164,7 @@ function brushstart() {
 }
 
 function get_range(d) {
-    return d === 'world_rank' ? [0, height] : [height, 0];
+    return d === 'world_rank' || d === 'student_staff_ratio' ? [0, height] : [height, 0];
 }
 
 function generate_tag(d) {
@@ -187,6 +200,19 @@ function region_selection() {
     var selection = this.options[this.selectedIndex].value;
     foreground.style("display", function (d) {
         return d['country'] === selection ? null : "none";
+    });
+    return null;
+}
+
+$('#btn-submit').on('click', comparison_selection);
+function comparison_selection() {
+    var selected_list = [];
+    var inputs = d3.select('#univ-selection').selectAll('input')[0];
+    $.each(inputs, function(i, el){
+        if(el.checked) selected_list.push(el.value);
+    });
+    foreground.style("display", function (d) {
+        return $.inArray(generate_tag(d), selected_list) === -1 ? "none" : null;
     });
     return null;
 }
