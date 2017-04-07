@@ -216,3 +216,13 @@ function comparison_selection() {
     });
     return null;
 }
+
+$('#rank-selection').on('input', rank_selection);
+function rank_selection() {
+    var rank = d3.select('#rank-selection')[0][0].value;
+    $('#rank-label').text('Rank: ' + rank);
+    foreground.style("display", function (d) {
+        return d['world_rank'] === rank ? null : "none";
+    });
+    return null;
+}
