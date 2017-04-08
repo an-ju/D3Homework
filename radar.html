@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+<link rel="stylesheet" href="src/radar-chart.css">
+<head>
+  <style>
+    body {
+      padding: 20px;
+    }
+    .radar-chart .area {
+      fill-opacity: 0.7;
+    }
+    .radar-chart.focus .area {
+      fill-opacity: 0.3;
+    }
+    .radar-chart.focus .area.focused {
+      fill-opacity: 0.9;
+    }
+    .area.germany, .germany .circle {
+      fill: #FFD700;
+      stroke: none;
+    }
+    .area.argentina, .argentina .circle {
+      fill: #ADD8E6;
+      stroke: none;
+    }
+  </style>
+
+  <script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+  <script type="text/javascript" src="src/radar-chart.js"></script>
+
+
+  </head>
+  <body>
+    <h1>Top 50 Universities in 2016 </h1>
+<p>
+Width: <input type="number" name="w" id="w" class="form-control" value="600" min="200" max="600" step="" required="required" title="">
+Height: <input type="number" name="h" id="h" class="form-control" value="600" min="200" max="600" step="" required="required" title="">
+</p>
+List of universities (ordered by rank) - Choose 2 and compare (press ctrl/command to select more than 1): 
+<form id="myForm">
+ <select id="selectuniv" multiple="multiple">
+    <option selected="selected">All Universities</option>
+  </select>
+</form>
+
+<p>
+<button onclick='showRadar()' class="btn btn-default" style="width:200px;height:50px;">Draw!</button>
+</p>
+
+
+
+<script type="text/javascript">
+
+ function showRadar(){
+      var univ_data  = [];
+      var univ = {};
+      
+      var chart = RadarChart.chart();
+
+  
+  d3.csv("top50.csv", function(data) 
+    {
+      data.forEach(function(d) 
+      {
+      d.university_name = d.university_name;
+      d.teaching = +d.teaching;
+      d.international = +d.international;
+      d.research = +d.research;
+      d.citations = +d.citations;
+      d.income = +d.income;
+      d.total_score = +d.total_score;
+      });
+
+      // var select_univ = " "
+
+      getuniversity_names(data);
+
+      // select_univ = document.getElementById("selectuniv").value;
+      sel_univ = document.getElementsByTagName('select')[0]; //document.getElementById("selectuniv");
+      select_univ = getSelectValues(sel_univ);
+
+      function getSelectValues(select) {
+        var result = [];
+        var options = select && select.options;
+        var opt;
+
+        for (var i=0, iLen=options.length; i<iLen; i++)
+         {
+            opt = options[i];
+
+            if (opt.selected) {
+              result.push(opt.value);
+            }
+          }
+         return result;
+       }
+
+
+      if (select_univ != "All Universities"){
+        getradar(data, select_univ);
+        getradarunivselect(data, select_univ);
+
+      }else{
+       getradar(data, select_univ = "All Universities")
+
+      }
+      
+      
+     });
+};
+
+ function getuniversity_names(data)
+ {
+    university_ranks = [];
+    university = [];
+    for(i=0; i<data.length; i++)
+    {
+      var space = " ";
+     university_ranks.push((data[i].world_rank).concat( space, data[i].university_name));
+     university.push(data[i].university_name);
+    };
+    console.log(university);
+
+    var select = document.getElementById("selectuniv"); 
+
+   
+
+    for(var i = 0; i < university.length; i++)
+    {
+        var univ_rank = university_ranks[i],
+        univ = university[i];
+
+        var el = document.createElement("option");
+        
+        el.textContent = univ_rank;
+        el.value = univ;
+        select.appendChild(el);
+    };
+  };
+
+
+
+function getradar(data, select_univ)
+{
+    var  w = document.getElementById("w").value,
+         h = document.getElementById("h").value,
+         univ_data  = []
+        
+      
+
+if (select_univ != "All Universities"){
+  
+
+
+  for(i=0; i<data.length; i++)
+          { 
+                for(var j = 0; j < select_univ.length; j++)
+                {
+
+
+                  if (data[i].university_name == select_univ[j])
+                        {
+                        newSeries = {};
+                        newSeries.className = data[i].university_name;
+                        newSeries.axes = [];
+                        newSeries.axes.push(
+                         {"axis": "teaching", "value": data[i].teaching }, 
+                         {"axis": "international", "value": data[i].international }, 
+                         {"axis": "research", "value": data[i].research },  
+                         {"axis": "citations", "value": data[i].citations },  
+                         {"axis": "income", "value": data[i].income }
+                         );
+                        univ_data.push(newSeries); 
+                        
+                        }
+                  else {continue};
+                  
+                } 
+                
+           }          
+             
+      }
+
+
+      else{
+       
+         for(i=0; i<data.length; i++)
+            {
+              newSeries = {};
+             
+              newSeries.className = data[i].university_name;
+              newSeries.axes = [];
+              newSeries.axes.push(
+               {"axis": "teaching", "value": data[i].teaching }, 
+               {"axis": "international", "value": data[i].international }, 
+               {"axis": "research", "value": data[i].research },  
+               {"axis": "citations", "value": data[i].citations },  
+               {"axis": "income", "value": data[i].income }
+               );
+              univ_data.push(newSeries);
+            };
+
+      }
+
+
+
+RadarChart.defaultConfig.radius = 3;
+RadarChart.defaultConfig.w = w;
+RadarChart.defaultConfig.h = h;
+RadarChart.draw("#chart-container", univ_data);
+function animate(elem,time) 
+{
+    if( !elem) return;
+    var to = elem.offsetTop;
+    var from = window.scrollY;
+    var start = new Date().getTime(),
+        timer = setInterval(function() {
+            var step = Math.min(1,(new Date().getTime()-start)/time);
+            window.scrollTo(0,(from+step*(to-from))+1);
+            if( step == 1){ clearInterval(timer);};
+        },25);
+        window.scrollTo(0,(from+1));
+  };
+var divVal = document.getElementById('chart-container');
+animate(divVal,600);
+};
+
+
+function getradarunivselect(data, select_univ)
+{
+    var  w = document.getElementById("w").value,
+         h = document.getElementById("h").value,
+         univ_names = []
+
+
+        
+    for(i=0; i<data.length; i++)
+    { 
+      for(var j = 0; j < select_univ.length; j++){
+
+
+      if (data[i].university_name == select_univ[j])
+      {
+      newSeries = {};
+      newSeries.className = data[i].university_name;
+      newSeries.axes = [];
+      newSeries.axes.push(
+       {"axis": "teaching", "value": data[i].teaching }, 
+       {"axis": "international", "value": data[i].international }, 
+       {"axis": "research", "value": data[i].research },  
+       {"axis": "citations", "value": data[i].citations },  
+       {"axis": "income", "value": data[i].income }
+       );
+      
+    }
+      else {continue}
+      univ_names.push(newSeries);
+  };
+    };
+
+// alert(univ_names.university_name);
+  
+RadarChart.defaultConfig.radius = 3;
+RadarChart.defaultConfig.w = 400;
+RadarChart.defaultConfig.h = 400
+RadarChart.defaultConfig.opacityArea = 0.2;
+
+  var univ_length = univ_names.length;
+
+function multicharts(univ_names, i)
+{
+  container_nm = "#chart-container".concat((i+1).toString());
+ 
+
+
+ RadarChart.draw(container_nm, [univ_names[i]]);
+function animate(elem,time) 
+{
+    if( !elem) return;
+    var to = elem.offsetTop;
+    var from = window.scrollY;
+    var start = new Date().getTime(),
+        timer = setInterval(function() {
+            var step = Math.min(1,(new Date().getTime()-start)/time);
+            window.scrollTo(0,(from+step*(to-from))+1);
+            if( step == 1){ clearInterval(timer);};
+        },25);
+        window.scrollTo(0,(from+1));
+  };
+
+var divVal = document.getElementById('chart-container2');
+// animate(divVal,600);
+
+};
+
+
+for (l=0;l< univ_names.length; l++){
+  multicharts(univ_names, l);
+
+};
+
+univ1 =  "Name:  " + univ_names[0].className + "\r\n" + univ_names[0].axes[0].axis +" : "+ univ_names[0].axes[0].value + "\r\n" + univ_names[0].axes[1].axis +" : "+ univ_names[0].axes[1].value + "\r\n" + univ_names[0].axes[2].axis +" : "+ univ_names[0].axes[2].value + "\r\n" + univ_names[0].axes[3].axis +" : "+ univ_names[0].axes[3].value + "\r\n" + univ_names[0].axes[4].axis +" : "+ univ_names[0].axes[4].value;
+
+univ2 =  "Name:  " + univ_names[1].className + "\r\n"+ univ_names[1].axes[1].axis +" : "+ univ_names[1].axes[0].value + "\r\n"+ univ_names[1].axes[1].axis +" : "+ univ_names[1].axes[1].value + "\r\n"+ univ_names[1].axes[2].axis +" : "+ univ_names[1].axes[2].value + "\r\n" + univ_names[1].axes[3].axis +" : "+ univ_names[1].axes[3].value + "\r\n"+ univ_names[1].axes[4].axis +" : "+ univ_names[1].axes[4].value;
+
+var textbox1 = document.getElementById("Uni1"),
+textbox2 = document.getElementById("Uni2");
+;
+textbox1.value = " " ;
+textbox1.value =  univ1
+textbox2.value = " " ;
+textbox2.value =  univ2
+
+};
+
+
+</script>
+
+
+<div id="chart-container" style="float:left ;width:1000px; height:500px;margin-bottom: 100px; margin-right: 50px;border: 20px solid ; border-color: white; border-radius: 10px">
+</div>
+<script type="text/javascript">
+    //RadarChart.defaultConfig.levelTick = true;
+  </script>
+
+<div id="chart-container1" style="float:left;width:445px; height:440px;margin-bottom: 10px; margin-left: 10px; margin-right: 5px; border: 20px solid ; border-color: white; border-radius: 10px"></div>
+
+
+<script type="text/javascript">
+    //RadarChart.defaultConfig.levelTick = true;
+</script>
+
+<div id="chart-container2" style="float:right;width:400px; height:440px;margin-bottom: 10px; margin-right: 25px; margin-left: 50px; border: 20px solid ; border-color: white; border-radius: 10px"></div>
+<script type="text/javascript">
+    //RadarChart.defaultConfig.levelTick = true;
+</script>
+<!-- <div id="Uni1" style="float:left;width:500px; height:100px;margin-bottom: 10px; margin-left: 50px; margin-right: 100px; border: 20px solid ; border-color: white; border-radius: 10px"></div> -->
+
+<textarea rows="4" cols="50" id="Uni1" style="float:left;width:400px; height:150px;margin-bottom: 10px; margin-left: 100px; margin-right: 100px; border: 20px solid ; border-color: white; border-radius: 10px"> </textarea>
+
+<textarea rows="4" cols="50" id="Uni2" style="float:right;width:400px; height:150px;margin-bottom: 10px; margin-right: 25px; margin-left: 200px; border: 20px solid ; border-color: white; border-radius: 10px"></textarea>
+<!-- <div id="Uni2" style="float:right;width:500px; height:100px;margin-bottom: 10px; margin-right: 25px; margin-left: 100px; border: 20px solid ; border-color: white; border-radius: 10px"></div> -->
+
+
+</body>
+</html>
